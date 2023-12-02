@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Luke Smeenge " />
+    <meta name="description" content="National Parks across the USA" />
+    <meta name="keywords" content="HTML, CSS, Figma" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" type="image/icon" href="./favicon.ico" />
+    <title>Smith holiday card website 2023
+    </title>
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header page__section">
+        <!-- <img src="./images/holiday-header.jpg" alt="Around logo" class="header__image" /> -->
+      </header>
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            src="./images/national-park-pic.jpg"
+            alt="Jacques Cousteau"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title" id="profile-name">Happy Holidays</h1>
+            <!-- <button class="profile__edit-button" type="button"></button> -->
+            <p class="profile__description" id="profile-description">from the Smith Family!</p>
+            </p>
+          </div>
+          <!-- <button
+            class="profile__add-button"
+            type="button"
+            id="profile-add-button"
+          ></button> -->
+        </section>
+
+        <section class="cards page__section">
+          <ul class="cards__list"></ul>
+        </section>
+      </main>
+      <footer class="footer page__section">
+        <p class="footer__copyright">&copy; 2023 Smith holiday website. Created by LUKE SMEENGE</p>
+      </footer>
+    </div>
+
+    <div class="popup" id="edit-popup">
+      <div class="popup__container">
+        <button
+          class="popup__close"
+          id="profile-close-button"
+          type="button"
+        ></button>
+        <h1 class="popup__heading">Edit profile</h1>
+        <form class="popup__form" id="edit-profile-form">
+          <label class="popup__label">
+            <input
+              class="popup__input popup__input_type_name"
+              type="text"
+              name="title"
+              id="name-input"
+              placeholder="Title"
+              maxlength="40"
+              minlength="2"
+              required
+            />
+          </label>
+          <span class="popup__error" id="name-input-error"></span>
+          <label class="popup__label">
+            <input
+              class="popup__input popup__input_type_description"
+              type="text"
+              name="description"
+              id="owners-description"
+              placeholder="Description"
+              maxlength="200"
+              minlength="2"
+              required
+            />
+          </label>
+          <span class="popup__error" id="owners-description-error"></span>
+          <button class="popup__button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="add-photo-popup">
+      <div class="popup__container">
+        <button
+          class="popup__close"
+          id="card-close-button"
+          type="button"
+        ></button>
+        <h2 class="popup__heading">New Place</h2>
+        <form class="popup__form" name="image_form">
+          <label class="popup__label">
+            <input
+              class="popup__input popup__input_type_title"
+              type="text"
+              name="title"
+              id="image-title"
+              placeholder="Title"
+              maxlength="30"
+              minlength="1"
+              required
+            />
+            <span class="popup__error" id="image-title-error"></span>
+          </label>
+          <label class="popup__label">
+            <input
+              class="popup__input popup__input_type_url"
+              type="url"
+              name="URL"
+              id="image-url"
+              placeholder="Image URL"
+              required
+            />
+            <span class="popup__error" id="image-url-error"></span>
+          </label>
+          <button class="popup__button" type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="popup-preview-image">
+      <div class="popup__preview-container">
+        <button class="popup__close" type="button"></button>
+        <img class="popup__image-preview" src="#" alt="" />
+        <p class="popup__image-title"></p>
+      </div>
+    </div>
+    <template id="card-template">
+      <li class="card">
+        <button class="card__delete-button" type="button"></button>
+        <img class="card__image" src="" alt="" />
+        <div class="card__description">
+          <h3 class="card__title"></h3>
+          <button class="card__like-button" type="button"></button>
+        </div>
+      </li>
+    </template>
+    <script src="./pages/index.js" type="module"></script>
+  </body>
+</html>

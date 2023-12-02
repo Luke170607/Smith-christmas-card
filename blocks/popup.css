@@ -1,0 +1,188 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0 19px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.popup__label {
+  position: relative;
+}
+
+.popup__container {
+  width: 430px;
+  /* height: 330px; Don't need this, error message pushed save/ submit button too low on popup */
+  max-width: 816px;
+  max-height: 540px;
+  margin: auto;
+  position: relative;
+  background-color: #fff;
+  padding: 36px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.popup__preview-container {
+  position: relative;
+}
+
+.popup__error {
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  transition: opacity 0.3s;
+  width: 358px;
+}
+
+.popup__error_visible {
+  opacity: 1;
+  left: 0px;
+  top: 5px;
+  position: relative;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.popup__close {
+  background: url(../images/newplus.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  width: 40px;
+  height: 40px;
+  top: -39px;
+  right: -37px;
+  transform: rotate(-45deg);
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  transition: 0.3s;
+}
+
+.popup__close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.popup__heading {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+  margin: 0;
+  padding-bottom: 54px;
+}
+
+.popup__input {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 13px;
+  padding-top: 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.popup__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.popup__form {
+  display: grid;
+  margin: 0 auto;
+  width: 358px;
+}
+
+.popup__form-description {
+  margin-top: 30px;
+}
+
+.popup__button {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  margin-top: 36px;
+  cursor: pointer;
+}
+
+.popup__button_disabled {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  opacity: 0.2;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  cursor: default;
+}
+
+.popup__button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.popup__button_disabled:hover {
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 630px) {
+  .popup__close {
+    width: 26px;
+    height: 26px;
+    top: -44.62px;
+    left: calc(100% - 24px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup__container {
+    width: 282px;
+    /*
+      height: 322px;*/
+    padding: 25px 22px;
+  }
+  .popup__heading {
+    width: 100%;
+    padding-bottom: 75px;
+  }
+}
+
+.popup__image-preview {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+.popup__image-title {
+  color: white;
+  font-size: 25px;
+}

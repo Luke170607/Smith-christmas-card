@@ -1,9 +1,10 @@
-const popups = document.querySelectorAll(".popup");
+const popup = document.querySelectorAll(".popup");
 
 // close popup when pressing escape //
+
 function closeByEscape(event) {
   if (event.key === "Escape") {
-    popups.forEach((popup) => {
+    popup.forEach((popup) => {
       if (popup.classList.contains("popup_opened")) {
         closePopup(popup);
       }
@@ -12,29 +13,17 @@ function closeByEscape(event) {
 }
 
 // open popup and add the escape button event listener //
+
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closeByEscape);
-  document.addEventListener("mousedown", closeByClickOutside);
 }
 
-// close popup and remove the escape button and click event listeners //
+// close popup and remove the escape button event listener //
+
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closeByEscape);
-  document.removeEventListener("mousedown", closeByClickOutside);
 }
 
-// close popup when clicking outside
-function closeByClickOutside(event) {
-  popups.forEach((popup) => {
-    if (
-      popup.classList.contains("popup_opened") &&
-      !popup.contains(event.target)
-    ) {
-      closePopup(popup);
-    }
-  });
-}
-
-export { popups, openPopup, closePopup };
+export { popup, openPopup, closePopup };

@@ -63,7 +63,6 @@
 .card__delete-button {
   background: url(../images/Trash.svg) center no-repeat;
   position: absolute;
-  visibility: hidden;
   top: 18px;
   right: 15px;
   width: 18px;

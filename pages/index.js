@@ -154,14 +154,3 @@ profileAddButton.addEventListener("click", function () {
 addPhotoForm.addEventListener("submit", handleAddPhotoSubmit);
 
 // Overlay for open and close popup//
-
-popup.forEach((popup) => {
-  popup.addEventListener("mousedown", (event) => {
-    if (event.target.classList.contains("popup_opened")) {
-      closePopup(popup);
-    }
-    if (event.target.classList.contains("popup__close")) {
-      closePopup(popup);
-    }
-  });
-});
